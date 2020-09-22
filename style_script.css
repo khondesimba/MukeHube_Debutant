@@ -1,0 +1,454 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-feature-settings: 'poppins', sans-serit;
+    }
+
+    /*================== (1) imposer la notion de responsive site ===============*/
+
+    body{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;   
+        margin-left: 370px;
+        margin-right: 100px;
+        background: linear-gradient(#0f4675, #0F4675 50%, #fff 100%);
+        background-repeat: no-repeat;
+        
+        
+    }
+        /*=================================
+           je personaliser mon header, le nav contient
+           le logo et le menu du site qui sont tous depadent
+           du heder (element parent)
+        ===================================
+        */
+
+    .header{
+        width: 100%;
+        height: 9vh;
+   
+    }
+
+    nav{
+        position: fixed;
+        background:  #03335f;
+        padding: 100px 40px 60px;
+        width: 100%;
+        border: 1px solid#000;
+        border-left: none  ;
+        border-right: none;
+        color: #cccccc;
+        box-shadow:2px 2px 12px #fff; 
+        left: 0;
+        z-index: 5;
+        
+    }
+    /* Debut des script pour le logo water Muke 
+        ...............................*/
+     
+        nav .logo{
+            position: relative;
+            margin-top: 0px;
+            padding-bottom: 10px;
+            
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: center;
+            align-items: center; */
+        }
+        nav .logo h2{
+            position: absolute;
+            /* color: #fff; */
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            margin-left: 200px;
+            
+        }
+        nav .logo h2:nth-child(1){
+            color: transparent;
+            -webkit-text-stroke:2px #03a9f4;
+        }
+        
+        nav .logo h2:nth-child(2){
+            color: #b9ddee;
+            animation: animate 4s ease-in-out infinite;
+        }
+        @keyframes animate{
+            0%, 100%
+            {
+                clip-path: polygon(0 39%, 14% 42%, 21% 48%, 33% 53%, 
+                46% 56%, 68% 55%, 82% 50%, 100% 49%, 
+                100% 100%, 1% 100%);
+            }
+            50%{
+                clip-path: polygon(0 58%, 12% 55%, 21% 59%, 35% 64%, 54% 63%,
+                 66% 56%, 83% 50%, 99% 58%, 100% 100%, 1% 100%);
+            }
+        }
+        /*....................................
+        Fin des script for logo 
+        ..........................*/
+    
+    nav ul{
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    nav ul li.logo{
+        flex: 1;
+        font-size: 30px;
+        font-weight: 700;
+    
+    }
+    nav ul div.items{
+        padding: 0 25px;
+        display: inline-flex;
+        font-size:20px;
+    }
+    nav ul div.items a{
+        text-decoration: none;
+        padding:12px;
+        cursor: pointer;
+    }
+    nav ul div.items :hover{
+        color: #03a9f4;
+    }
+    nav ul .search{
+        height: 40px;
+        width: 240px;
+        display: flex;
+        background: #f2f2f2;
+        border-radius: 5px;
+    }
+    nav ul .search input{
+        height: 100%;
+        width: 200px;
+        border: none;
+        outline: none;
+        padding: 0 10px;
+        color: #000;
+        font-size: 16px;
+        border-radius: 5px 0 0 5px;
+        
+    
+    }
+    
+    nav ul .search .icon{
+        height: 100%;
+        width: 40px;
+        line-height: 40px;
+        text-align: center;
+        background:  #b9ddee;
+        border-radius: 0 5px 5px 0;
+        border: #cccccc;
+    }
+    nav ul .search .icon img{
+        color: #222222;
+        font-size: 18px;
+    
+    }
+    nav ul .search .icon:hover{
+        background: #03a9f4;
+    }
+    a{
+        text-decoration: none;
+    }
+
+.sidbar{
+    
+    position: fixed;
+    top: 160px;
+    left: 40px;
+    background: #010615;
+    height:200%;
+    width : 320px;
+    padding: 100px 40px 60px;
+}
+.bloc_login{
+    top: 398px;
+    right: 230px;
+    position: absolute;
+}
+/*================================ contenu pour le Menu dns le Sidbar=====================================================*/
+ 
+.list{
+    position: relative;
+  }
+  /*script pour personnaliser le titre des memu Mukehube*/
+  .list h3{
+    position: relative;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 0,5px;
+    margin-top: 0;
+    margin-left: 10px;
+    font-size: 20px;
+    height:100%;
+    width: 100%;
+  
+  }
+  .list ul{position: relative;
+  }
+  /*Balise relatif au puce seulement*/
+  .list ul li{
+    position: relative;
+    left: 0;
+    top:40px;
+    color: #f5f11e;
+    list-style: none;
+    margin: 4px 0;
+    border-left: 5px solid #f5f11e;
+    border-top: 1px solid #f5f11e;
+    transition: 0,15s;
+    cursor: pointer;
+  }
+
+  /*=================Balise permetant d'ajouter le style aux puces ============*/
+  
+  .list ul li::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ecf006d5;
+    transform: scaleX(0); /*Rendre la couleur du survol en hide et en mode affichage after*/
+    transform-origin: top; /*gauche droit centre et haut, direction declancher de l'effet au survol*/
+    transition: 1s;
+  }
+  
+  .list ul li:hover{
+    left: 5px;
+    background: #fff;
+    }
+  .list ul li span{
+    position: relative;
+    padding: 8px;
+    display: inline-block;
+    z-index: 1;
+    transition: 0,5s;
+    margin: 0%;
+    font-size: 17px;
+  }
+  .list ul li:hover::before{
+    transform: scaleX(1);
+    }
+  .list ul li:hover{color: #111;}
+
+ .size_img{
+     width: 1967PX;
+     height: 963px;
+ }
+  
+.word{
+    display: flex;
+    top: 255px;
+    left: 440px;
+    height:50px;
+    width : 100px;
+    position: absolute;
+}
+
+        /*================== le bloc en coleur blanc, gerant tous le contenu des annonce ===============*/
+
+    .container{
+        width: 1080px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top:30%;
+        flex-direction: row;
+        
+        
+    }
+    .container .box{
+        position: relative;
+        width: 320px;
+        left: 200px;
+        background: #fff;
+        border-radius: 5px 5px 5px 5px;
+        padding: 100px 40px 60px;
+        box-shadow: 0 15PX 45px rgba(0,0,0,.1);
+      
+        
+    }
+        /*================== instruction imposé qui doit se declnché lorsque le pointer passe au survol ===============*/
+
+    .container .box::before{
+        content: '';
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        background: #ff226d;
+        transform: scaleY(0);
+        transform-origin: top;
+        border-radius: 5px 5px 5px 5px;
+        transition: transform 0.5s;
+        z-index: 1;
+
+    }
+    .container .box:hover:before{
+        transform: scaleY(1);
+        transform-origin: right;
+        transition: transform 0.5s;
+        z-index: 1;
+    }
+
+        /*================== formatage des blocs ===============*/
+
+    .container .box h2{
+        position: absolute;
+        left: 40px;
+        top: 40px;
+        font-size: 4em;
+        font-weight: 800;
+        z-index: 1;
+        opacity: 0.1;
+        transition: 0.5s;
+        
+    }
+    .container .box:hover h2{
+        opacity: 1;
+        color: #fff;
+        transform: translateY(-40px);
+        
+    }
+
+/*================== contenu pour le titre ===============*/
+    .container .box h3{
+        position: relative;
+        font-size: 1.5em;
+        bottom: 20px;
+        z-index: 2;
+        color: rgb(51, 51, 51);
+        transition: 0.5s;
+    }
+/*================== contenu pour le paragraphe ===============*/
+
+    .container .box p{
+        position: relative;
+        z-index: 2;
+        color: #555;
+        transition: 0.5s;
+        text-align: justify;
+    }
+
+    /*================== pour le paragraphe lord du survol ===============*/
+    .container .box:hover h3,
+    .container .box:hover p
+    {
+        color: #fff;
+    }
+
+
+
+    /*================== bloc gerant le details des annonces ===============*/
+
+    .contenu{
+        
+        width: 1100px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top:8%;
+        background: #03335f;
+        
+    }
+    .contenu .text_detail{
+        position: relative;
+        width: 320px;
+        background: #fff;
+        padding: 100px 40px 60px;
+        box-shadow: 0 15PX 45px rgba(0,0,0,.1);
+    }
+
+         /*=================================
+                   IL FAUT RETRAVAILLER L'EMPLACEMENT DU FOOTER
+                   IL EST AJUSTER VERS LA GAUCHE
+                   IL %ME FAUTE AUSSI PERSONNALISE LE LOGO, LE METTRE AVEC EFFTE ECLAT
+                   PUIS JE DOIS CREER LE PAGE DE CONNEXION AVEC JS, JqUERY
+                ===================================
+                */
+ .footer_contenu{
+        display: flex;
+        justify-content: center;
+        background: #010615;
+        flex-wrap: wrap;
+        position: absolute;
+        margin-top: 850px;
+        box-shadow:2px 2px 22px rgb(110, 227, 243);
+        left: 0;
+        width: 100%;
+        padding: 100px 40px 60px;
+        background: #010615;
+        z-index: 2;
+        
+        }
+        .boxe{
+            position: relative;
+            width: 210px;  /*Longueur de notre bloc dans le footer */
+            height: 200px;
+            text-align: justify;
+            justify-content: center;
+            background: #060c21;
+            margin: 40px;
+        }
+        .boxe::before{
+            content: '';
+            position: absolute;
+            top:-2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: #fff;
+            z-index: -1;
+        }
+        .boxe::after{
+            content: '';
+            position: absolute;
+            top:-2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: #fff;
+            z-index: -2;
+            filter: blur(40px);
+        }
+        .boxe:nth-child(1):before,
+        .boxe:nth-child(1):after{
+            background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+        }
+        .boxe:nth-child(2):before,
+        .boxe:nth-child(2):after{
+            background: linear-gradient(235deg,#ff005e,#010615,#fbff00);
+        }
+        .boxe:nth-child(3):before,
+        .boxe:nth-child(3):after{
+            background: linear-gradient(235deg,#772aff,#101615,#2196f3);
+        }
+        .boxe .glass{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            display: block;
+            background: rgba(255,255,255,.1);
+            pointer-events:none;
+        }
+        
+        
+        .boxe .contente{
+            padding: 20px;
+            color: aliceblue;
+        }
